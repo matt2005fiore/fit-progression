@@ -1,5 +1,3 @@
-# fit-progression
-
 Longo, Polanco, Fiore, Di Fede
 Applicazione per la gestione delle schede di allenamenti in palestra (con la possibilità di analizzare il progresso nel tempo).
 
@@ -17,3 +15,14 @@ Web:
 Schermata principale del sito con icone che portano alle varie sezioni – le quali fanno da specchio a quelle dell’app -, e che rispondono all’hovering del cursore espandendosi per mostrare un box di testo con una breve descrizione della sezione presa in causa. 
 La parte alta della schermata è occupata da una barra con dei pulsanti collegati alle diverse sezioni, un pulsante che riporta all’home e pulsanti di login e registrazione, sostituiti da un pulsante che riporta al profilo personale l’utente una volta effettuato il login.
 I progressi del profilo utente legati a calendario e progressi personali sono condivisi da web e app. 
+
+
+
+Back Office: 
+Nell’applicazione back office il nostro obiettivo è quello di riuscire a modificare i contenuti all’interno dell’app in seguito alla prima inserzione per potere permetterci di aggiungere o modificare le cose precedentemente inserite. L’applicazione sarà gestita in maniera simile alla parte front office, infatti saremo in grado di accedere a diverse sezioni con gli stessi nomi dell’applicazione principale e potremo interagire con una interfaccia che ci permetta di modificare, aggiungere o rimuovere informazioni. 
+-	Nella sezione utenti siamo in grado di visualizzare una lista di utenti, e le informazioni collegate a loro ad esempio: schede, esercizi e dati sensibili
+-	Nella sezione scheda è possibile vedere le schede fornite di base dall’applicazione modificarle, cancellarle e aggiungerne di nuove 
+-	Nella sezione esercizi è possibile visualizzare gli esercizi che l’utente vedrà la prima volta che apre l’applicazione e in seguito interagirci per modificarli, cancellarli oppure crearne di nuovi 
+-	Nella sezione calendario è possibile modificare in che modo vengono distribuiti gli esercizi tra i giorni e modificare, aggiungere o rimuovere gli obiettivi già presenti. 
+
+
