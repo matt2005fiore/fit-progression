@@ -1,47 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:id="@+id/MainPageMessage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/puoi_iniziare_con_questi_bottoni"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="200dp"
-    android:textSize="29dp">
-</TextView>
-    <Button
-        android:id="@+id/ExerciseButton"
-        android:align="@+id/MainPageMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/esercizi"
-        android:layout_alignTop="@id/MainPageMessage"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="40dp">
-    </Button>
-    <Button
-        android:id="@+id/ProfileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profilo" >
-    </Button>
-    <Button
-    android:id="@+id/ListButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/schede"
-        android:layout_alignTop="@id/MainPageMessage"
-        android:layout_alignEnd="@id/MainPageMessage"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="40dp">
-    </Button>
-    <Button
-    android:id="@+id/CalendarButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/calendario" >
-</Button>
-
-</RelativeLayout>
+    android:layout_height="match_parent"/>
