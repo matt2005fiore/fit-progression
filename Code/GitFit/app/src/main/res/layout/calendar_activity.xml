@@ -25,10 +25,10 @@
         android:textAlignment="center" />
 </LinearLayout>
 
-<ConstraintLayout>
+<!--ConstraintLayout>
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:backgroundTint="#FFFFFF"
-</ConstraintLayout>
+</ConstraintLayout-->
 
 
