@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#E3963E">
 
     <DatePicker
         android:id="@+id/datePicker1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#FF9800"
-        android:backgroundTint="#FF9800"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="#E3963E"
         android:clickable="true"
         android:datePickerMode="calendar"
         android:dayOfWeekBackground="#8BC34A"
         android:fitsSystemWindows="true"
+        android:focusable="true"
         android:headerMonthTextAppearance="@style/TextAppearance.AppCompat.Display1"
         android:headerYearTextAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:paddingLeft="32dp"
+        android:paddingStart="32dp"
         android:paddingTop="20dp"
-        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
         android:textAlignment="center" />
-</TableLayout>
+</LinearLayout>
 
