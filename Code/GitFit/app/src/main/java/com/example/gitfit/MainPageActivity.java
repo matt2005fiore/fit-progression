@@ -27,7 +27,7 @@ public class MainPageActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderCalendario.class));
+                startActivity(new Intent(MainPageActivity.this, CalendarActivity.class));
             }
         });
         schedaButton.setOnClickListener(new View.OnClickListener() {
@@ -39,13 +39,13 @@ public class MainPageActivity extends AppCompatActivity {
         exerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderEsercizi.class));
+                startActivity(new Intent(MainPageActivity.this, PlaceholderExercises.class));
             }
         });
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderProfilo.class));
+                startActivity(new Intent(MainPageActivity.this, PlaceholderProfile.class));
             }
         });
     }
