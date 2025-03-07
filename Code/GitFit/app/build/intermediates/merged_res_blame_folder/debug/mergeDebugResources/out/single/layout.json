@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\fragment_first.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\fragment_first.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\setting_activity.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\setting_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\activity_form.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\activity_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\exercises_list.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\exercises_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\content_form.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\content_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "com.example.gitfit.app-mergeDebugResources-65:/layout/activity_form.xml",
+        "source": "com.example.gitfit.app-main-68:/layout/activity_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\activity_user_form.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\activity_user_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\exercises_details.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\exercises_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\profile_activity.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\profile_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\goal_activity.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\goal_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-mergeDebugResources-65:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\matt2\\.gradle\\daemon\\8.10.2\\com.example.gitfit.app-main-68:\\layout\\activity_login.xml"
+    }
+]
