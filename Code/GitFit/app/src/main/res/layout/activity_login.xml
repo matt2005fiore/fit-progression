@@ -5,7 +5,13 @@
     android:id="@+id/main"
     android:orientation="horizontal">
 
-
+<Button
+    android:id="@+id/GoToMainPage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="main page"
+    >
+</Button>
 
 
 
