@@ -6,7 +6,7 @@ import android.os.Bundle;
 public class CalendarActivity extends Activity {
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.CalendarActivity);
+         // super.onCreate(savedInstanceState);
+        setContentView(R.layout.calendar_activity);
     }
 }
