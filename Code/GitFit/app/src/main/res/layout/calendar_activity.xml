@@ -23,6 +23,12 @@
         android:paddingTop="20dp"
         android:paddingEnd="20dp"
         android:textAlignment="center" />
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#E3963E"
+    android:orientation="horizontal">
+
 </LinearLayout>
 
 
