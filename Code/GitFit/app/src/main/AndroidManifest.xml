@@ -13,10 +13,13 @@
         android:theme="@style/Theme.GitFit"
         tools:targetApi="31">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlaceholderSchede"
             android:exported="false" />
         <activity
-            android:name=".PlaceholderProfile"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".PlaceholderExercises"

@@ -48,4 +48,13 @@ android:layout_height="match_parent">
     android:layout_marginTop="150dp"
     android:text="@string/calendario">
 </Button>
+    <Button
+        android:id="@+id/SettingsButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignEnd="@id/ProfileButton"
+        android:layout_alignTop="@id/ProfileButton"
+        android:layout_marginTop="150dp"
+        android:text="Impostazioni">
+    </Button>
 </RelativeLayout>

@@ -5,11 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainPageActivity extends AppCompatActivity {
 
@@ -22,7 +18,14 @@ public class MainPageActivity extends AppCompatActivity {
         Button schedaButton = (Button)findViewById(R.id.SchedaButton);
         Button exerciseButton = (Button)findViewById(R.id.ExerciseButton);
         Button profileButton = (Button)findViewById(R.id.ProfileButton);
+        Button settingsButton = (Button)findViewById(R.id.SettingsButton);
 
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainPageActivity.this, SettingsActivity.class));
+            }
+        });
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +47,7 @@ public class MainPageActivity extends AppCompatActivity {
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderProfile.class));
+                startActivity(new Intent(MainPageActivity.this, ProfileActivity.class));
             }
         });
     }
