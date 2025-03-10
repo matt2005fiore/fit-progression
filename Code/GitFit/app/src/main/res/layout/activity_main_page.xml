@@ -9,7 +9,7 @@ android:layout_height="match_parent">
     android:text="@string/puoi_iniziare_con_questi_bottoni"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="30dp"
-    android:textSize="29dp">
+    android:textSize="29sp">
 </TextView>
 <Button
     android:id="@+id/ExerciseButton"
@@ -30,23 +30,31 @@ android:layout_height="match_parent">
     android:layout_marginTop="150dp">
 </Button>
 <Button
-    android:id="@+id/ListButton"
+    android:id="@+id/SchedaButton"
     android:layout_width="150dp"
     android:layout_height="150dp"
     android:text="@string/schede"
     android:layout_alignTop="@id/MainPageMessage"
     android:layout_alignEnd="@id/MainPageMessage"
     android:layout_marginTop="40dp"
-    android:layout_marginRight="40dp">
+    android:layout_marginEnd="40dp">
 </Button>
 <Button
     android:id="@+id/CalendarButton"
-    android:layout_alignTop="@id/ListButton"
-    android:layout_alignEnd="@id/ListButton"
+    android:layout_alignTop="@id/SchedaButton"
+    android:layout_alignEnd="@id/SchedaButton"
     android:layout_width="150dp"
     android:layout_height="150dp"
     android:layout_marginTop="150dp"
     android:text="@string/calendario">
 </Button>
-
+    <Button
+        android:id="@+id/SettingsButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignEnd="@id/ProfileButton"
+        android:layout_alignTop="@id/ProfileButton"
+        android:layout_marginTop="150dp"
+        android:text="Impostazioni">
+    </Button>
 </RelativeLayout>
