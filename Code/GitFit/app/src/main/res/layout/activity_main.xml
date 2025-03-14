@@ -8,7 +8,7 @@
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Enter ImageButton ID"
         />
 
@@ -44,6 +44,7 @@
         android:src="@drawable/p"
         android:scaleType="fitXY"
         android:layout_marginTop="200dp"
+        android:contentDescription="Piegamento"
         />
 
     <ImageButton
@@ -52,10 +53,9 @@
         android:layout_height="200dp"
         android:src="@drawable/oip"
         android:scaleType="fitXY"
-        android:layout_marginTop="250dp"
+        android:contentDescription="Capibara"
+
+        android:layout_below="@id/Piegamento"
         />
-
-
-    <!-- Add more ImageButtons as needed -->
 
 </RelativeLayout>
