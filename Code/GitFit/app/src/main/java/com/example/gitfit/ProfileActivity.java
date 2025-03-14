@@ -20,7 +20,7 @@ public class ProfileActivity extends AppCompatActivity {
         editorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, ProfileEditor.class));
+                startActivity(new Intent(ProfileActivity.this, ProfileEditorActivity.class));
             }
         });
         logoutButton.setOnClickListener(new View.OnClickListener() {
