@@ -24,10 +24,20 @@
         android:paddingEnd="20dp"
         android:textAlignment="center" />
 <LinearLayout
+    android:layout_gravity="center"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:background="#E3963E"
     android:orientation="horizontal">
+    <Button
+        android:id="@+id/GoalsButton"
+        android:text="@string/obiettivi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
 
