@@ -19,7 +19,7 @@
             android:name=".CalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileEditor"
+            android:name=".ProfileEditorActivity"
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"
