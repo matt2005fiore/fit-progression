@@ -22,5 +22,3 @@ public class CalendarActivity extends Activity{
         });
         }
     }
-
-
