@@ -35,7 +35,7 @@ public class MainPageActivity extends AppCompatActivity {
         schedaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderSchede.class));
+                startActivity(new Intent(MainPageActivity.this, ExercisesListActivity.class));
             }
         });
         exerciseButton.setOnClickListener(new View.OnClickListener() {
