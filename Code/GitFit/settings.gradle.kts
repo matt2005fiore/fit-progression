@@ -20,4 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GitFit"
-include ':app'
+include(":app")
+ 

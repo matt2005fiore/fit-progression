@@ -1,0 +1,61 @@
+<!-- res/layout/activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter ImageButton ID"
+        />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_below="@id/autoCompleteTextView" />
+
+
+    <Button
+        android:id="@+id/ReturnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:layout_below="@id/autoCompleteTextView"
+        android:layout_marginLeft="100dp"/>
+    <Button
+        android:id="@+id/SchedaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scheda"
+        android:layout_below="@id/autoCompleteTextView"
+        android:layout_marginLeft="200dp"/>
+
+
+
+    <ImageButton
+        android:id="@+id/Piegamento"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/p"
+        android:scaleType="fitXY"
+        android:layout_marginTop="200dp"
+        />
+
+    <ImageButton
+        android:id="@+id/Capibara"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/oip"
+        android:scaleType="fitXY"
+        android:layout_marginTop="250dp"
+        />
+
+
+    <!-- Add more ImageButtons as needed -->
+
+</RelativeLayout>
