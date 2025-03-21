@@ -5,22 +5,7 @@
       <config />
     </shared>
     <layouts>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_form.xml">
-        <config>
-          <theme>@style/Theme.GitFit</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-        <config>
-          <theme>@style/Theme.GitFit</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/exercises_details.xml">
-        <config>
-          <theme>@style/Theme.GitFit</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/exercises_list.xml">
         <config>
           <theme>@style/Theme.GitFit</theme>
         </config>
@@ -31,10 +16,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="370c43e2-ec6e-4b46-9946-8da3eb0dea86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="370c43e2-ec6e-4b46-9946-8da3eb0dea86" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +25,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\matt2\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\YaelFaridPolanco\.android\avd\Medium_Phone_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -233,12 +215,12 @@
       <map>
         <entry key="com.example.gitfit">
           <value>
-            <CheckInfo lastCheckTimestamp="1741355363816" />
+            <CheckInfo lastCheckTimestamp="1742545243086" />
           </value>
         </entry>
         <entry key="com.example.gitfit.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1741355363812" />
+            <CheckInfo lastCheckTimestamp="1742545243057" />
           </value>
         </entry>
       </map>
