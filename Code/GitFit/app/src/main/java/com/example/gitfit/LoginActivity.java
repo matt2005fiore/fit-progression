@@ -55,9 +55,10 @@ public class LoginActivity extends Activity {
                     return;
                 }
 
+
                 // Validate credentials
                 if (username.equals(savedUsername) && password.equals(savedPassword)) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainPageActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
