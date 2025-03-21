@@ -37,7 +37,7 @@
             android:name=".MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FormActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
