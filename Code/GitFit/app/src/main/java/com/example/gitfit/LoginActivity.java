@@ -15,6 +15,7 @@ public class LoginActivity extends Activity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class LoginActivity extends Activity {
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        registerButton = findViewById(R.id.registerButton);
+
 
         // Recupera username e password salvati in SharedPreferences
         SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
@@ -32,6 +35,15 @@ public class LoginActivity extends Activity {
 
         Log.d("LoginActivity", "Saved Username: " + savedUsername);
         Log.d("LoginActivity", "Saved Password: " + savedPassword);
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, FormActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +72,12 @@ public class LoginActivity extends Activity {
                 if (username.equals(savedUsername) && password.equals(savedPassword)) {
                     Intent intent = new Intent(LoginActivity.this, MainPageActivity.class);
                     startActivity(intent);
-                    finish();
+                    // Controlliamo se l'utente ha già completato il Form
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isFirstRun", false);
+                    editor.apply();
+
+                    //finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Credenziali non valide", Toast.LENGTH_SHORT).show();
                 }
@@ -69,9 +86,33 @@ public class LoginActivity extends Activity {
 
     }
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         //super.onBackPressed();
+        // Controlliamo se l'utente ha già completato il Form
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isFirstRun", true);
+        editor.apply();
+
        finish();
     }
+*/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Controlliamo se l'utente ha già completato il Form
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        boolean isFirstRun = preferences.getBoolean("isFirstRun", true);
+
+        if (!isFirstRun)/* {
+            // Se è la prima apertura, vai a FormActivity
+            startActivity(new Intent(this, LoginActivity.class));
+        } /*else*/ {
+            // Se non è la prima apertura, vai a MainPageActivity
+            startActivity(new Intent(this, MainPageActivity.class));
+        }
+
+    }
+
 }
