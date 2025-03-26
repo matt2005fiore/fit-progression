@@ -11,16 +11,17 @@ android:layout_height="match_parent">
     android:layout_marginTop="30dp"
     android:textSize="29sp">
 </TextView>
-<Button
-    android:id="@+id/ExerciseButton"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    android:text="@string/esercizi"
-    android:layout_alignTop="@id/MainPageMessage"
-    android:layout_marginTop="40dp"
-    android:layout_marginStart="40dp">
-</Button>
-<Button
+
+    <Button
+        android:id="@+id/ExerciseButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@id/MainPageMessage"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="78dp"
+        android:text="@string/esercizi"></Button>
+
+    <Button
     android:id="@+id/ProfileButton"
     android:layout_width="150dp"
     android:layout_height="150dp"
@@ -29,17 +30,18 @@ android:layout_height="match_parent">
     android:layout_alignTop="@id/ExerciseButton"
     android:layout_marginTop="150dp">
 </Button>
-<Button
-    android:id="@+id/SchedaButton"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    android:text="@string/schede"
-    android:layout_alignTop="@id/MainPageMessage"
-    android:layout_alignEnd="@id/MainPageMessage"
-    android:layout_marginTop="40dp"
-    android:layout_marginEnd="40dp">
-</Button>
-<Button
+
+    <Button
+        android:id="@+id/SchedaButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@id/MainPageMessage"
+        android:layout_alignEnd="@id/MainPageMessage"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/schede"></Button>
+
+    <Button
     android:id="@+id/CalendarButton"
     android:layout_alignTop="@id/SchedaButton"
     android:layout_alignEnd="@id/SchedaButton"

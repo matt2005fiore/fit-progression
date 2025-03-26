@@ -24,6 +24,10 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, ProfileEditorActivity.class));
             }
         });
+
+
+
+        //in questa linea di codice si va a modificare isfirstrun ponendolo a true cosi che mi mostra la login
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,8 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.apply();
 
                 finish();
-
-
 
 
 
