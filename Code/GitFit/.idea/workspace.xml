@@ -38,6 +38,7 @@
   <component name="ChangeListManager">
     <list default="true" id="370c43e2-ec6e-4b46-9946-8da3eb0dea86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,12 +244,12 @@
       <map>
         <entry key="com.example.gitfit">
           <value>
-            <CheckInfo lastCheckTimestamp="1742908942909" />
+            <CheckInfo lastCheckTimestamp="1743080926424" />
           </value>
         </entry>
         <entry key="com.example.gitfit.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1742908942898" />
+            <CheckInfo lastCheckTimestamp="1743080926426" />
           </value>
         </entry>
       </map>
