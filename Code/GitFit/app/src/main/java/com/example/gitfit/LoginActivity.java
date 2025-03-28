@@ -10,6 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapp.api.ApiService;
+import com.example.myapp.api.RetrofitClient;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class LoginActivity extends Activity {
 
     private EditText usernameEditText;
@@ -48,8 +57,40 @@ public class LoginActivity extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
+
+                Retrofit retrofit = RetrofitClient.getClient();
+                ApiService api = retrofit.create(ApiService.class);
+
+                UserProva user = new UserProva(username, password);
+
+                Call<ResponseBody> call = api.login(user);
+
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            Toast.makeText(LoginActivity.this, "Login avvenuto", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                    }
+                });
+
+
+
+
+                /*
+                String username = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+
 
                 // Fetch updated SharedPreferences here
                 SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
@@ -81,6 +122,7 @@ public class LoginActivity extends Activity {
                 } else {
                     Toast.makeText(LoginActivity.this, "Credenziali non valide", Toast.LENGTH_SHORT).show();
                 }
+                */
             }
         });
 
@@ -102,7 +144,7 @@ public class LoginActivity extends Activity {
     protected void onResume() {
         super.onResume();
         // Controlliamo se l'utente ha già completato il Form
-        SharedPreferences preferences = getSharedPreferences("Use   rPreferences", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
         boolean isFirstRun = preferences.getBoolean("isFirstRun", true);
 
         if (!isFirstRun)/* {

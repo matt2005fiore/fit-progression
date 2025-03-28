@@ -1,6 +1,7 @@
 package com.example.gitfit;
 
-public class Goals {
+public class
+Goals {
     public Goals() {}
     private int id;
 
