@@ -144,7 +144,7 @@ public class LoginActivity extends Activity {
     protected void onResume() {
         super.onResume();
         // Controlliamo se l'utente ha già completato il Form
-        SharedPreferences preferences = getSharedPreferences("Use   rPreferences", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
         boolean isFirstRun = preferences.getBoolean("isFirstRun", true);
 
         if (!isFirstRun)/* {
