@@ -4,7 +4,19 @@ import pymysql.cursors
 
 app = Flask(__name__)
 
-# Uncomment and configure your database connection properly if needed
+# Simula un database in memoria
+users = [
+    {
+    "username":"testuser",
+    "password": "password123"
+    },
+    {
+    "username":"testuser2",
+    "password": "password12345"
+    }
+    ]
+
+# configurazione del database
 # conn = pymysql.connect(
 #     host='localhost',
 #     user='root',
@@ -14,40 +26,39 @@ app = Flask(__name__)
 #     autocommit=True
 # )
 
-@app.route("/", methods=["GET", "POST"])
+# Endpoint per il login
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+
+    if not username or not password:
+        return jsonify({"error": "Username e password sono obbligatori."}), 400
+
+    # Verifica le credenziali
+    for utente in users:
+        if utente.get('username') == username and utente.get('password') == password:
+            return jsonify({"message": "Login effettuato con successo."}), 200
+        else:
+            return jsonify({"error": "Credenziali non valide."}), 401
+
+
+# Endpoint per la registrazione
+@app.route('/register', methods=['POST'])
 def register():
-    if request.method == "POST":
-        name = request.form.get("name")
-        surname = request.form.get("surname")
-        weight = request.form.get("weight")
-        age = request.form.get("age")
-        goal = request.form.get("goal")
-        username = request.form.get("username")
-        password = request.form.get("password")
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
 
-        # Validate input
-        if not all([name, surname, weight, age, goal, username, password]):
-            return "<h3>All fields are required!</h3>", 400
+    if not username or not password:
+        return jsonify({"error": "Username e password sono obbligatori."}), 400
 
-        # Simulate saving data (replace with database logic if needed)
-        user_data = {
-            "name": name,
-            "surname": surname,
-            "weight": weight,
-            "age": age,
-            "goal": goal,
-            "username": username,
-            "password": password  # Replace with hashed password in production
-        }
-        print("Received data:", user_data)  # Debugging output
+    if username in users:
+        return jsonify({"error": "Username gia esistente."}), 409
 
-        return redirect(url_for("success"))
+    users[username] = password
+    return jsonify({"message": "Registrazione completata con successo."}), 201
 
-    return render_template("form.html")
-
-@app.route("/success")
-def success():
-    return "<h2>Registration completed successfully!</h2>"
-
-if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True, port=5000)
