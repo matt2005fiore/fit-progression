@@ -1,6 +1,7 @@
 package com.example.gitfit;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +24,22 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, ProfileEditorActivity.class));
             }
         });
+
+
+
+        //in questa linea di codice si va a modificare isfirstrun ponendolo a true cosi che mi mostra la login
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("isFirstRun", true);
+                editor.apply();
+
+                finish();
+
+
+
             }
         });
     }

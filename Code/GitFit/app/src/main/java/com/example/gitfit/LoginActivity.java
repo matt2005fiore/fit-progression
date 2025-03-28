@@ -10,11 +10,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapp.api.ApiService;
+import com.example.myapp.api.RetrofitClient;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class LoginActivity extends Activity {
 
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +34,8 @@ public class LoginActivity extends Activity {
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        registerButton = findViewById(R.id.registerButton);
+
 
         // Recupera username e password salvati in SharedPreferences
         SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
@@ -33,11 +45,52 @@ public class LoginActivity extends Activity {
         Log.d("LoginActivity", "Saved Username: " + savedUsername);
         Log.d("LoginActivity", "Saved Password: " + savedPassword);
 
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, FormActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
+
+                Retrofit retrofit = RetrofitClient.getClient();
+                ApiService api = retrofit.create(ApiService.class);
+
+                UserProva user = new UserProva(username, password);
+
+                Call<ResponseBody> call = api.login(user);
+
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            Toast.makeText(LoginActivity.this, "Login avvenuto", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                    }
+                });
+
+
+
+
+                /*
+                String username = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+
 
                 // Fetch updated SharedPreferences here
                 SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
@@ -60,12 +113,48 @@ public class LoginActivity extends Activity {
                 if (username.equals(savedUsername) && password.equals(savedPassword)) {
                     Intent intent = new Intent(LoginActivity.this, MainPageActivity.class);
                     startActivity(intent);
-                    finish();
+                    // Controlliamo se l'utente ha già completato il Form
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("isFirstRun", false);
+                    editor.apply();
+
+                    //finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Credenziali non valide", Toast.LENGTH_SHORT).show();
                 }
+                */
             }
         });
 
     }
+
+/*    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        // Controlliamo se l'utente ha già completato il Form
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isFirstRun", true);
+        editor.apply();
+
+       finish();
+    }
+*/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Controlliamo se l'utente ha già completato il Form
+        SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        boolean isFirstRun = preferences.getBoolean("isFirstRun", true);
+
+        if (!isFirstRun)/* {
+            // Se è la prima apertura, vai a FormActivity
+            startActivity(new Intent(this, LoginActivity.class));
+        } /*else*/ {
+            // Se non è la prima apertura, vai a MainPageActivity
+            startActivity(new Intent(this, MainPageActivity.class));
+        }
+
+    }
+
 }
