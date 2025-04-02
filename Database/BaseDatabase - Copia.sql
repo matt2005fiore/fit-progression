@@ -1,3 +1,4 @@
+drop schema if exists gitfituserprofile;
 create database if not exists gitfit; 
 use gitfit; 
 create table ExercisesList (
@@ -6,7 +7,7 @@ listName varchar(100) not null,
 length time not null
 );
 create table Goals ( 
-id int auto_increment primary key
+id int auto_increment primary key 
 ); 
 create table Progress (
 id int auto_increment primary key
