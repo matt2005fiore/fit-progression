@@ -1,114 +1,72 @@
-
-from flask import Flask, request, jsonify, session, render_template
+from flask import Flask, request, jsonify
 import pymysql
-import pymysql.cursors
 
-app = Flask(__name__)@app.route('/home')
-def home():
- return render_template('Register.html')
-
-#conn = pymysql.connect(
- #host='localhost',
- #user='root',
- #password='1234',
- #database='persone',
- #cursorclass=pymysql.cursors.DictCursor,
- #autocommit=True
-#)
-
+import sys
 app = Flask(__name__)
 
-<<<<<<< HEAD
-# Simula un database in memoria
-users = [
-    {
-    "username":"testuser",
-    "password": "password123"
-    },
-    {
-    "username":"testuser2",
-    "password": "password12345"
-    }
-    ]
+# Database connection
+conn = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='1234',
+    database='persone',
+    cursorclass=pymysql.cursors.DictCursor,
+    autocommit=True
+)
+cursor = conn.cursor()
 
-# configurazione del database
-# conn = pymysql.connect(
-#     host='localhost',
-#     user='root',
-#     password='1234',
-#     database='persone',
-#     cursorclass=pymysql.cursors.DictCursor,
-#     autocommit=True
-# )
+# Endpoint to get all users
+@app.route('/users', methods=['GET'])
+def get_users():
+    cursor.execute("SELECT * FROM UserProfile")
+    users = cursor.fetchall()
+    return jsonify(users), 200
 
-# Endpoint per il login
+# Endpoint to create a new user
+@app.route('/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    if not data or 'firstname' not in data or 'surname' not in data:
+        return jsonify({'error': 'Invalid input'}), 400
+
+    query = ("INSERT INTO UserProfile (firstname, surname, weight, height, gender, eMail, codice) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s)")
+    values = (data['firstname'], data['surname'], data.get('weight', 0.0),
+            data.get('height', 0), data.get('gender', True),
+            data.get('eMail', ''), data.get('codice', ''))
+
+    try:
+        cursor.execute(query, values)
+        conn.commit()
+        return jsonify({'message': 'User created successfully'}), 201
+    except pymysql.MySQLError as err:  # Correct error handling
+        return jsonify({'error': str(err)}), 500
+
+# Endpoint for user login
 @app.route('/login', methods=['POST'])
 def login():
-    data = request.json
-    username = data.get('username')
+    data = request.get_json()
+    email = data.get('eMail')
     password = data.get('password')
 
-    if not username or not password:
-        return jsonify({"error": "Username e password sono obbligatori."}), 400
+    if not email or not password:
+        return jsonify({'message': 'Email and password are required'}), 400
 
-    # Verifica le credenziali
-    for utente in users:
-        if utente.get('username') == username and utente.get('password') == password:
-            return jsonify({"message": "Login effettuato con successo."}), 200
-        else:
-            return jsonify({"error": "Credenziali non valide."}), 401
+    cursor.execute("SELECT * FROM UserProfile WHERE eMail = %s", (email,))
+    user = cursor.fetchone()
+
+    if user and user['password'] == password:  # Compare passwords (hashed in real cases)
+        return jsonify({'message': 'Login successful', 'user': user}), 200
+    else:
+        return jsonify({'message': 'Invalid credentials'}), 401
+    
 
 
-# Endpoint per la registrazione
-@app.route('/register', methods=['POST'])
-def register():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
 
-    if not username or not password:
-        return jsonify({"error": "Username e password sono obbligatori."}), 400
 
-    if username in users:
-        return jsonify({"error": "Username gia esistente."}), 409
+print(sys.version)
+print(__file__)
 
-    users[username] = password
-    return jsonify({"message": "Registrazione completata con successo."}), 201
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000)
-=======
-@app.route("/", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        name = request.form["name"]
-        surname = request.form["surname"]
-        weight = request.form["weight"]
-        age = request.form["age"]
-        goal = request.form["goal"]
-        username = request.form["username"]
-        password = request.form["password"]
-
-        # Simuliamo il salvataggio dei dati (puoi sostituire con un database)
-        user_data = {
-            "name": name,
-            "surname": surname,
-            "weight": weight,
-            "age": age,
-            "goal": goal,
-            "username": username,
-            "password": password
-        }
-        print("Dati ricevuti:", user_data)  # Debug, stampa nel terminale
-
-        return redirect(url_for("success"))  # Reindirizza a una pagina di successo
-
-    return render_template("form.html")
-
-@app.route("/success")
-def success():
-    return "<h2>Registrazione completata con successo!</h2>"
 
 if __name__ == "__main__":
-    app.run(debug=True)
->>>>>>> 43dfeeae3fa30a00f77d2e410effbe07ebccb069
+    app.run(debug=True, host='0.0.0.0', port=5000)
