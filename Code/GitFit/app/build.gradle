@@ -36,11 +36,11 @@ dependencies {
     implementation libs.constraintlayout
     implementation libs.retrofit
     implementation libs.converter.gson
-    implementation libs.interceptor
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
     //0kHttp (logging delle richieste HTTP)
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation libs.logging.interceptor
 }

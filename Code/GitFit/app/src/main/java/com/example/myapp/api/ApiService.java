@@ -1,23 +1,21 @@
 package com.example.myapp.api;
 
-import com.example.gitfit.UserProva;
-
-import java.net.DatagramPacket;
+import com.example.gitfit.User;
 import java.util.List;
-
-import okhttp3.Response;
-import okhttp3.ResponseBody;
+import okhttp3.ResponseBody;  // ✅ Correct import
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
-        @POST("/login")
-        Call<ResponseBody> login(@Body UserProva user);
 
+    @GET("/users")
+    Call<List<User>> getUsers();
 
+    @POST("/users")
+    Call<User> createUser(@Body User user);
 
-
-
-    }
+    @POST("/login")
+    Call<ResponseBody> login(@Body User user);  // ✅ Now it works
+}
