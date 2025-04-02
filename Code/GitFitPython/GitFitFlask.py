@@ -1,8 +1,12 @@
 
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, render_template
 import pymysql
 import pymysql.cursors
-app = Flask(__name__)
+
+app = Flask(__name__)@app.route('/home')
+def home():
+ return render_template('Register.html')
+
 #conn = pymysql.connect(
  #host='localhost',
  #user='root',
