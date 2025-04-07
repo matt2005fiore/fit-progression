@@ -23,11 +23,11 @@ public class CalendarActivity extends Activity {
             }
         });
 
-    // Intent per inserire gli esercizi svolti nel calendario
+    /* Intent per inserire gli esercizi svolti nel calendario
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setType("vnd.android.cursor.item/event");
-        intent.putExtra(CalendarContract.Events.TITLE, "Learn Android");
-        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Download Examples");
+        intent.putExtra(CalendarContract.Events.TITLE, "Esercizio x");
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Dieci ripetizioni da dodici");
 
         // Impostare data e ora
         GregorianCalendar calDate = new GregorianCalendar(2025, 01, 01);
@@ -39,5 +39,6 @@ public class CalendarActivity extends Activity {
 
          // Renderlo privato
         intent.putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
+     */
     }
 }
