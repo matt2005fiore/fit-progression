@@ -38,13 +38,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="100dp"
-            android:text="@string/obiettivi" />
+            android:text="Obiettivi" />
 
         <Button
             android:id="@+id/ProgressButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/progressi" />
+            android:layout_marginEnd="100dp"
+            android:text="Progressi" />
 
     </LinearLayout>
 <LinearLayout
