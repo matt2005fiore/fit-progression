@@ -39,6 +39,38 @@ public class CalendarActivity extends Activity {
 
          // Renderlo privato
         intent.putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
-     */
+
+// barra dei pulsanti
+
+    private BottomBar mBottomBar;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            cBottomBar = BottomBar.bind(this, R.layout.activity_calendar,
+                    savedInstanceState);
+
+            cBottomBar.setItems(
+                    new BottomBarTab(R.drawable.ic_home, "Home"),
+                    new BottomBarTab(R.drawable.ic_scheda, "Scheda"),
+                    new BottomBarTab(R.drawable.ic_calendar, "Calendario"),
+                    new BottomBarTab(R.drawable.ic_profile, "Profilo")
+            );
+
+            cBottomBar.setOnItemSelectedListener(new OnTabSelectedListener() {
+                @Override
+                public void onItemSelected(final int position) {
+                    // l'utente ha selezionato un'altra tab
+                }
+            });
+        }
+
+        @Override
+        protected void onSaveInstanceState(Bundle outState) {
+            super.onSaveInstanceState(outState);
+            cBottomBar.onSaveInstanceState(outState);
+        }
+    } */
     }
 }
