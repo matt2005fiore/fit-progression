@@ -50,6 +50,15 @@
         android:inputType="numberDecimal" />
 
     <EditText
+        android:id="@+id/heightEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="37dp"
+        android:layout_y="238dp"
+        android:hint="Altezza (kg)"
+        android:inputType="numberDecimal" />
+
+    <EditText
         android:id="@+id/ageEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

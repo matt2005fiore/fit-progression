@@ -22,7 +22,7 @@ import retrofit2.Retrofit;
 
 public class FormActivity extends Activity {
 
-    private EditText nameEditText, surnameEditText, weightEditText, ageEditText, usernameEditText, passwordEditText;
+    private EditText nameEditText, surnameEditText, weightEditText, ageEditText, usernameEditText, passwordEditText, heightEditText;
     private Spinner goalSpinner;
     private Button submitButton;
 
@@ -40,6 +40,7 @@ public class FormActivity extends Activity {
         passwordEditText = findViewById(R.id.passwordEditText);
         goalSpinner = findViewById(R.id.goalSpinner);
         submitButton = findViewById(R.id.submitButton);
+        heightEditText = findViewById(R.id.heightEditText);
 
         // Definizione della lista di obiettivi
         String[] goals = {"Perdere peso", "Mantenere peso", "Aumentare massa muscolare"};
@@ -57,6 +58,8 @@ public class FormActivity extends Activity {
                 String goal = goalSpinner.getSelectedItem().toString();
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
+                String height =heightEditText.getText().toString();
+
 
                 if (name.isEmpty() || surname.isEmpty() || weight.isEmpty() || age.isEmpty() || username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(FormActivity.this, "Tutti i campi sono obbligatori", Toast.LENGTH_SHORT).show();
@@ -66,8 +69,8 @@ public class FormActivity extends Activity {
                     user.setName(name);
                     user.setSurname(surname);
                     user.setWeight(Float.parseFloat(weight));
-                    user.setHeight(Integer.parseInt(age)); // Assuming age is height, you might want to adjust this
-                    user.setGender(true);  // Assuming gender is set to true (male) by default, you can modify this logic as needed
+                    user.setHeight(Float.parseFloat(height));
+                   // user.setGender(true);
                     user.seteMail(username);
                     user.setPassword(password);
 
@@ -81,6 +84,7 @@ public class FormActivity extends Activity {
 
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
+                            Log.e("API_RESPONSE", "Code: " + response.code() + ", Body: " + response.errorBody().toString());
                             if (response.isSuccessful()) {
                                 // Salvataggio delle informazioni dell'utente nelle SharedPreferences
                                 SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);

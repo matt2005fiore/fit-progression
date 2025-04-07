@@ -50,13 +50,14 @@ public class LoginActivity extends Activity {
             String password = passwordEditText.getText().toString().trim();
 
             if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Inserisci username e password", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Inserisci username e codice", Toast.LENGTH_LONG).show();
                 return;
             }
 
             Retrofit retrofit = RetrofitClient.getClient();
             ApiService api = retrofit.create(ApiService.class);
 
+            // Crea l'oggetto User per inviare al backend
             User user = new User(username, password);
             Call<ResponseBody> call = api.login(user);
             call.enqueue(new Callback<ResponseBody>() {
@@ -65,19 +66,28 @@ public class LoginActivity extends Activity {
                     if (response.isSuccessful()) {
                         try {
                             JSONObject jsonResponse = new JSONObject(response.body().string());
-                            String token = jsonResponse.getString("token");
+                            // Estrai l'oggetto "user" dalla risposta
+                            JSONObject userJson = jsonResponse.getJSONObject("user");
 
-                            // Store token securely
+                            // Ottieni i dati dell'utente (es. nome, codice, email, etc.)
+                            String firstName = userJson.getString("firstname");
+                            String codice = userJson.getString("codice");
+                            String email = userJson.getString("eMail");
+
+                            // Memorizza le informazioni dell'utente nelle SharedPreferences
                             SharedPreferences.Editor editor = preferences.edit();
-                            editor.putString("token", token);
-                            editor.putBoolean("isLoggedIn", true);
+                            editor.putString("firstName", firstName);
+                            editor.putString("codice", codice);
+                            editor.putString("email", email);
+                            editor.putBoolean("isLoggedIn", true); // Imposta che l'utente è loggato
                             editor.apply();
 
                             Toast.makeText(LoginActivity.this, "Login avvenuto con successo", Toast.LENGTH_LONG).show();
+                            // Vai alla pagina principale
                             startActivity(new Intent(LoginActivity.this, MainPageActivity.class));
                             finish();
                         } catch (Exception e) {
-                            Log.e("LoginActivity", "Error parsing JSON response", e);
+                            Log.e("LoginActivity", "Errore nel parsing della risposta JSON", e);
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, "Credenziali non valide", Toast.LENGTH_SHORT).show();
@@ -92,5 +102,4 @@ public class LoginActivity extends Activity {
             });
         });
     }
-
 }
