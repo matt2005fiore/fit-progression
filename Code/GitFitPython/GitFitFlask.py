@@ -50,7 +50,7 @@ def create_user():
         return jsonify({'error': str(err)}), 500
     
 
-#@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
     email = data.get('eMail')  # Oppure 'username' se lo usi nel frontend
@@ -74,7 +74,7 @@ def login():
         }), 200
     else:
         return jsonify({'message': 'Credenziali non validi'}), 401
-
+    
 
 
 
