@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
+    <!--item
         android:id="@+id/action_scheda"
         android:enabled="true"
         android:icon="@drawable/ic_scheda_white_24dp"
@@ -18,10 +17,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_profile_white_24dp"
         android:title="@string/text_profile"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" /-->
 </menu>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
@@ -31,4 +30,4 @@ android:layout_height="match_parent">
     app:menu="@menu/bottom_navigation_menu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
-</FrameLayout>
+</FrameLayout-->

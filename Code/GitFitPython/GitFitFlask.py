@@ -53,9 +53,10 @@ def create_user():
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    email = data.get('eMail')  # Oppure 'username' se lo usi nel frontend
-    codice = data.get('codice')  # O 'password' se il frontend lo invia così
+    email = data.get('email')  # Oppure 'username' se lo usi nel frontend
+    codice = data.get('password')  # O 'password' se il frontend lo invia così
 
+    print("login", email, codice)
     if not email or not codice:
         return jsonify({'message': 'Email e codice obbligatori'}), 400
 

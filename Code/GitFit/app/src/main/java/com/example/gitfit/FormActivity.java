@@ -84,7 +84,7 @@ public class FormActivity extends Activity {
 
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
-                            Log.e("API_RESPONSE", "Code: " + response.code() + ", Body: " + response.errorBody().toString());
+                           // Log.e("API_RESPONSE", "Code: " + response.code() + ", Body: " + response.errorBody().toString());
                             if (response.isSuccessful()) {
                                 // Salvataggio delle informazioni dell'utente nelle SharedPreferences
                                 SharedPreferences preferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);

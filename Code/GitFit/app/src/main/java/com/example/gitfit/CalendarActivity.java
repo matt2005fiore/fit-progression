@@ -14,14 +14,14 @@ public class CalendarActivity extends Activity {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        Button goalsButton = (Button) findViewById(R.id.GoalsButton);
+        //Button goalsButton = (Button) findViewById(R.id.GoalsButton);
 
-        goalsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CalendarActivity.this, SettingsActivity.class));
-            }
-        });
+       // goalsButton.setOnClickListener(new View.OnClickListener() {
+        // @Override
+        // public void onClick(View v) {
+        //     startActivity(new Intent(CalendarActivity.this, SettingsActivity.class));
+        // }
+        //});
 
     /* Intent per inserire gli esercizi svolti nel calendario
         Intent intent = new Intent(Intent.ACTION_INSERT);
