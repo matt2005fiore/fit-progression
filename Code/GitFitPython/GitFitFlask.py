@@ -30,11 +30,11 @@ def create_user():
     """
     
     values = (
-        data.get('name', ''),       # firstname
+        data.get('firstname', ''),       # firstname
         data.get('surname', ''),    # surname
         float(data.get('weight', 0.0)),
         float(data.get('height', 0.0)),
-        data.get('eMail', ''),
+        data.get('email', ''),
         data.get('password', ''),   # Mappa 'password' su 'codice'
         data.get('gender', False)
     )
@@ -65,7 +65,7 @@ def login():
     user = cursor.fetchone()
 
     if user:
-        return jsonify({
+         return jsonify({
             'message': 'Login successful',
             'user': {  # Invia i dati necessari al frontend
                 'firstname': user['firstname'],
@@ -76,10 +76,6 @@ def login():
     else:
         return jsonify({'message': 'Credenziali non validi'}), 401
     
-
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
