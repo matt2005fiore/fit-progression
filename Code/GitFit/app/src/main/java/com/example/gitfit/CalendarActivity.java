@@ -2,30 +2,36 @@ package com.example.gitfit;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.icu.util.GregorianCalendar;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 public class CalendarActivity extends Activity {
+
     @Override
-    protected void onCreate(Bundle SavedInstanceState) {
-        super.onCreate(SavedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        //Button goalsButton = (Button) findViewById(R.id.GoalsButton);
-
-       // goalsButton.setOnClickListener(new View.OnClickListener() {
-        // @Override
-        // public void onClick(View v) {
-        //     startActivity(new Intent(CalendarActivity.this, SettingsActivity.class));
-        // }
-        //});
-
-    /* Intent per inserire gli esercizi svolti nel calendario
+        // Initialize CalendarView
+        CalendarView calendarView = findViewById(R.id.calendarView);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                // Azione esempio: mostrami un toast con la data selezionata
+                String date = dayOfMonth + "/" + (month + 1) + "/" + year;
+                Toast.makeText(CalendarActivity.this, "Selected date: " + date, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    
+        public void onAddExerciseClick(View view) {
+        // Intent per aggiungere un esercizio al calendario
         Intent intent = new Intent(Intent.ACTION_INSERT);
-        intent.setType("vnd.android.cursor.item/event");
+        intent.setData(CalendarContract.Events.CONTENT_URI);
         intent.putExtra(CalendarContract.Events.TITLE, "Esercizio x");
         intent.putExtra(CalendarContract.Events.DESCRIPTION, "Dieci ripetizioni da dodici");
 
@@ -37,40 +43,10 @@ public class CalendarActivity extends Activity {
         // Oppure farla apparire come attività svolta quel giorno come intero
         intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
 
-         // Renderlo privato
+        // Renderlo privato
         intent.putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
 
-// barra dei pulsanti
-
-    private BottomBar mBottomBar;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
-            cBottomBar = BottomBar.bind(this, R.layout.activity_calendar,
-                    savedInstanceState);
-
-            cBottomBar.setItems(
-                    new BottomBarTab(R.drawable.ic_home, "Home"),
-                    new BottomBarTab(R.drawable.ic_scheda, "Scheda"),
-                    new BottomBarTab(R.drawable.ic_calendar, "Calendario"),
-                    new BottomBarTab(R.drawable.ic_profile, "Profilo")
-            );
-
-            cBottomBar.setOnItemSelectedListener(new OnTabSelectedListener() {
-                @Override
-                public void onItemSelected(final int position) {
-                    // l'utente ha selezionato un'altra tab
-                }
-            });
-        }
-
-        @Override
-        protected void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            cBottomBar.onSaveInstanceState(outState);
-        }
-    } */
+        startActivity(intent);
     }
 }
+    
