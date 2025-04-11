@@ -4,22 +4,32 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
     private final ArrayList<String> giorniDelMese;
+
+    // Inizializzo il onItemListener
     private final OnItemListener onItemListener;
 
+    // Implemento la logica, inserendo i giorni del mese come stringhe in un arraylist
     public CalendarAdapter(ArrayList<String> giorniDelMese) {
         this.giorniDelMese = giorniDelMese;
         this.onItemListener = onItemListener;
     }
 
+    // Imposto il LayoutInflater
     @NonNull
     @Override
     public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,6 +40,8 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
         return new CalendarViewHolder(view);
     }
 
+
+    // Implemento la logica
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
         holder.giornoDelMese.setText(giorniDelMese.get(position));
