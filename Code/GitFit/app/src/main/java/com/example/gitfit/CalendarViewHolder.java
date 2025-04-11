@@ -7,22 +7,29 @@ import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public final TextView giornoDelMese;
+
+    // Inizializzo il onItemListener
     private final CalendarAdapter.OnItemListener onItemListener;
 
-    public CalendarViewHolder(@NonNull View itemView){
+    // Implemento la logica
+    public CalendarViewHolder(@NonNull View itemView, CalendarAdapter.OnItemListener onItemListener) {
         super(itemView);
-        giornoDelMese = itemView.findById(R.id.cellDayText);
+        giornoDelMese = itemView.findViewById(R.id.cellDayText);
         this.onItemListener = onItemListener;
         itemView.setOnClickListener(this);
     }
 
     public void onClick(View view) {
-        okItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
+        onItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
     }
 
 }*/

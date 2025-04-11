@@ -2,7 +2,11 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
+<<<<<<< HEAD
       <SelectionState runConfigName="Unnamed">
+=======
+      <SelectionState runConfigName="CalendarActivity">
+>>>>>>> 5eea5bb1b6087fa6de338c4f2e984dc4d19b0314
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2025-04-11T08:25:19.868141Z">
           <Target type="DEFAULT_BOOT">
