@@ -21,7 +21,7 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
     private final CalendarAdapter.OnItemListener onItemListener;
 
     // Implemento la logica
-    public CalendarViewHolder(@NonNull View itemView){
+    public CalendarViewHolder(@NonNull View itemView, CalendarAdapter.OnItemListener onItemListener){
         super(itemView);
         giornoDelMese = itemView.findById(R.id.cellDayText);
         this.onItemListener = onItemListener;
@@ -29,7 +29,7 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
     }
 
     public void onClick(View view) {
-        okItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
+        onItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
     }
 
 }

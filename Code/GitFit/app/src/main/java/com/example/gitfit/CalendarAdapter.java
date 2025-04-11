@@ -24,7 +24,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
     private final OnItemListener onItemListener;
 
     // Implemento la logica, inserendo i giorni del mese come stringhe in un arraylist
-    public CalendarAdapter(ArrayList<String> giorniDelMese) {
+    public CalendarAdapter(ArrayList<String> giorniDelMese, OnItemListener onItemListener) {
         this.giorniDelMese = giorniDelMese;
         this.onItemListener = onItemListener;
     }
@@ -52,8 +52,8 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
         return giorniDelMese.size();
     }
 
-    public interface onItemListener {
+    // Definisco l'interfaccia pre invocare un callback quando un oggetto in questa view viene selezionato
+    public interface OnItemListener {
         void onItemClick(int position, String dayText);
     }
-
 }
