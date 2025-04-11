@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GitFit.iml" filepath="$PROJECT_DIR$/GitFit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitFit.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitFit.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitFit.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitFit.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitFit.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitFit.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitFit.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitFit.app.unitTest.iml" />
     </modules>
   </component>
 </project>
