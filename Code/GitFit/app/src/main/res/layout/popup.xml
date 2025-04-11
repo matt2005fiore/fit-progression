@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="275dp"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtclose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:text="X"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="367dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@drawable/p"/>
+
+        <TextView
+            android:layout_width="135dp"
+            android:layout_height="47dp"
+            android:text="Push-ups"
+            android:id="@+id/pushups"
+            android:textColor="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Per eseguire i push-ups bisogna stendersi a pancia in giù e spingersi con le proprie mani."
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</LinearLayout>
