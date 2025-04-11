@@ -1,8 +1,10 @@
 package com.example.gitfit;
-
 public class ExercisesList {
-    public ExercisesList() {}
     private int id;
+    private String listName;
+    private String length;
+
+    public ExercisesList() {}
 
     public int getId() {
         return id;
@@ -11,7 +13,6 @@ public class ExercisesList {
     public void setId(int id) {
         this.id = id;
     }
-    private String listName;
 
     public String getListName() {
         return listName;
@@ -21,13 +22,11 @@ public class ExercisesList {
         this.listName = listName;
     }
 
-    private int length;
-
-    public int getLength() {
+    public String getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(String length) {
         this.length = length;
     }
 }
