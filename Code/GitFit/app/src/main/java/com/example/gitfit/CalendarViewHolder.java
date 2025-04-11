@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     public final TextView giornoDelMese;
 
@@ -21,9 +21,9 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
     private final CalendarAdapter.OnItemListener onItemListener;
 
     // Implemento la logica
-    public CalendarViewHolder(@NonNull View itemView, CalendarAdapter.OnItemListener onItemListener) {
+    public CalendarViewHolder(@NonNull View itemView, CalendarAdapter.OnItemListener onItemListener){
         super(itemView);
-        giornoDelMese = itemView.findViewById(R.id.cellDayText);
+        giornoDelMese = itemView.findById(R.id.cellDayText);
         this.onItemListener = onItemListener;
         itemView.setOnClickListener(this);
     }
