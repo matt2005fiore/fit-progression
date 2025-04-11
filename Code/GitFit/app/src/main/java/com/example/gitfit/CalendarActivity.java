@@ -1,5 +1,6 @@
 package com.example.gitfit;
 
+//import android.app.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +10,12 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import java.util.GregorianCalendar;
+
 public class CalendarActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+@Override
+   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
@@ -49,4 +52,3 @@ public class CalendarActivity extends Activity {
         startActivity(intent);
     }
 }
-    
