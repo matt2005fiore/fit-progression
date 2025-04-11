@@ -1,4 +1,4 @@
-/*package com.example.gitfit;
+package com.example.gitfit;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,4 +31,4 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
         onItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
     }
 
-}*/
+}
