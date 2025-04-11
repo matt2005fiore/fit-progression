@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< Updated upstream
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-=======
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns::app="http://schemas.android-com/apk/res-auto"
@@ -11,34 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
->>>>>>> Stashed changes
     android:background="#E3963E"
     tools:context=".CalendarActivity">
 
     <LinearLayout
-<<<<<<< Updated upstream
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#E3963E"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/GoalsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
-            android:text="@string/obiettivi" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
-=======
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -82,7 +53,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="horizontal">
 
     <TextView
         android:layout_width="0dp"
@@ -149,6 +120,3 @@
 
 
 </LinearLayout>
-
-
->>>>>>> Stashed changes

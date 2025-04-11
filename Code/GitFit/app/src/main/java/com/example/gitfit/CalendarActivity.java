@@ -1,5 +1,8 @@
 package com.example.gitfit;
 
+import java.time.LocalDate;
+import java.time.YearMonth;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.time.YearMonth;
+import java.util.Locale;
 
 public class CalendarActivity extends Activity implements CalendarAdapter.OnItemListener{
 
@@ -18,7 +29,7 @@ public class CalendarActivity extends Activity implements CalendarAdapter.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar)
+        setContentView(R.layout.activity_calendar);
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -26,26 +37,26 @@ public class CalendarActivity extends Activity implements CalendarAdapter.OnItem
 
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
-        meseAnnoText = findViewById(R.layout.meseAnno);
+        meseAnnoText = findViewById(R.id.meseAnno);
     }
 
     private void setMonthView() {
         meseAnnoText.setText(meseAnnoFromDate(selectedDate));
         ArrayList<String> giorniInUnMese = giorniInUnMeseArray(selectedDate);
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter(giorniInUnMese, onItemListener:this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), spanCount:7);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(giorniInUnMese, this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
-        calendarRecyclerView.setAdapter(calendarAdapter)
+        calendarRecyclerView.setAdapter(calendarAdapter);
     }
 
     private ArrayList<String> giorniInUnMeseArray(LocalDate date) {
         ArrayList<String> giorniInUnMeseArray = new ArrayList<>();
-        AnnoMese annoMese = AnnoMese.from(date);
+        YearMonth annoMese = YearMonth.from(date);
         int giorniInUnMese = annoMese.lengthOfMonth();
 
-        LocalDate primoDelMese = selectedDate.withDayOfMonth(1);
-        int giornoDellaSettimana = primoDelMese.getGiornoDellaSettimana().getValue();
+        LocalDate primoDelMese = date.withDayOfMonth(1);
+        int giornoDellaSettimana = primoDelMese.getDayOfWeek().getValue();
 
         for(int i = 1; i <= 42; i++) {
             if(i<= giornoDellaSettimana || i > giorniInUnMese + giornoDellaSettimana) {
@@ -75,37 +86,11 @@ public class CalendarActivity extends Activity implements CalendarAdapter.OnItem
 
     @Override
     public void onItemClick(int position, String dayText) {
-        if(dayText.equals("")) {
+        if(!dayText.equals("")) { // Controlla che il giorno non sia vuoto
             String message = dayText + " " + meseAnnoFromDate(selectedDate);
-            Toast.makeText(context:this, message, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
-
-
-    /* Codice vecchio
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
-
-        // Iniazializza CalendarView
-        calendarView = findViewById(R.id.calendarView);
-        date = findViewById(R.id.date);
-
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int anno, int mese, int giornoDelMese) {
-                // Azione esempio: mostrami un toast con la data selezionata
-<<<<<<< Updated upstream
-                String date = giornoDelMese + "/" + (mese + 1) + "/" + anno;
-                date.setText(" " + date + " ");
-=======
-                String date = dayOfMonth + "/" + (month + 1) + "/" + year;
-                Toast.makeText(CalendarActivity.this, date, Toast.LENGTH_SHORT).show();
->>>>>>> Stashed changes
-            }
-        });
-    } */
     
         public void onAddExerciseClick(View view) {
         // Intent per aggiungere un esercizio al calendario
