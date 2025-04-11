@@ -1,68 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns::app="http://schemas.android-com/apk/res-auto"
+    xmlns::tools="http://schemas.android-com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:background="#E3963E"
-    android:orientation="vertical">
-
-    <DatePicker
-        android:id="@+id/datePicker1"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="120dp"
-        android:backgroundTint="#E3963E"
-        android:clickable="true"
-        android:datePickerMode="calendar"
-        android:dayOfWeekBackground="#8BC34A"
-        android:fitsSystemWindows="true"
-        android:focusable="true"
-        android:headerMonthTextAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:headerYearTextAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:paddingStart="32dp"
-        android:paddingTop="20dp"
-        android:paddingEnd="20dp"
-        android:textAlignment="center" />
+    tools:context=".CalendarActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#E3963E"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout:marginTop="20dp"
+        android:layout:marginBottom="20dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@String/mesePrima"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:onClick="mesePrecedente"/>
+
+        <TextView
+            android:id="@+id/meseAnno"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weigth="2"
+            android:text="Aprile 2025"
+            android_textSize="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@String/meseDopo"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:onClick="meseSuccessivo"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/GoalsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
-            android:text="Obiettivi" />
-
-        <Button
-            android:id="@+id/ProgressButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
-            android:text="Progressi" />
-
-    </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/white"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_navigation_main" />
+        android:layout_weight="1"
+        android:text="LUN"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="MAR"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="MER"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="GIO"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="VEN"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="SAB"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="DOM"
+        android:textColor="@color/gray"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+</LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendarRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>
-</LinearLayout>
-
