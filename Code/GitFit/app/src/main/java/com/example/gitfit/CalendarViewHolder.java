@@ -1,4 +1,4 @@
-package com.example.gitfit;
+/*package com.example.gitfit;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,4 +25,4 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
         okItemListener.onItemClick(getAdapterPosition(), (String) giornoDelMese.getText());
     }
 
-}
+}*/

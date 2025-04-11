@@ -1,12 +1,17 @@
+
 <resources>
-    <string name="app_name">GitFit</string>
+    <string name="app_name">testPopUp</string>
     <string name="esercizi">Esercizi</string>
     <string name="profilo">Profilo</string>
     <string name="schede">Schede</string>
     <string name="calendario">Calendario</string>
-    <string name="mesePrima">MesePrima</string>
-    <string name="meseDopo">MeseDopo</string>
     <string name="puoi_iniziare_con_questi_bottoni">Puoi iniziare con questi bottoni!</string>
     <string name="obiettivi">Obiettivi</string>
     <string name="progressi" />
+
+    <string-array name="workout_types">
+        <item>All</item>
+        <item>Chest</item>
+        <item>Biceps</item>
+    </string-array>
 </resources>

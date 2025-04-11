@@ -1,122 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns::app="http://schemas.android-com/apk/res-auto"
-    xmlns::tools="http://schemas.android-com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#E3963E"
     tools:context=".CalendarActivity">
 
-    <LinearLayout
+    <!--LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout:marginTop="20dp"
-        android:layout:marginBottom="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@String/mesePrima"
+            android:text="@string/mesePrima"
             android:textColor="@color/black"
             android:background="@null"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:onClick="mesePrecedente"/>
+            android:onClick="mesePrecedente" />
 
         <TextView
             android:id="@+id/meseAnno"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:weigth="2"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text="Aprile 2025"
-            android_textSize="20dp"
+            android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@String/meseDopo"
+            android:text="@string/meseDopo"
             android:textColor="@color/black"
             android:background="@null"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:onClick="meseSuccessivo"/>
+            android:onClick="meseSuccessivo" />
+    </LinearLayout-->
 
-</LinearLayout>
-
+    <!-- Giorni della settimana -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="LUN"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="MAR"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="MER"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="GIO"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="VEN"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="SAB"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="DOM"
-        android:textColor="@color/gray"
-        android:textAlignment="center"
-        android:textSize="16sp"/>
-</LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="LUN"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MAR"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MER"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GIO"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VEN"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SAB"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DOM"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+    </LinearLayout>
 
+    <!-- Calendario (RecyclerView) -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

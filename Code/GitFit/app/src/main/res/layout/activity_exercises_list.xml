@@ -1,6 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter ImageButton ID"
+        />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_below="@id/autoCompleteTextView" />
+
+
+    <Button
+        android:id="@+id/ReturnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:layout_below="@id/autoCompleteTextView"
+        android:layout_marginLeft="100dp"/>
+    <Button
+        android:id="@+id/SchedaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esercizi"
+        android:layout_below="@id/autoCompleteTextView"
+        android:layout_marginLeft="200dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/scheda1">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="10sp"
+                android:gravity="center_horizontal"
+                android:background="#00FFF0"
+                android:text="SCHEDA 1"
+                />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="#00FF00"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Esercizio"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:background="#00FF00"
+                android:text="Set + Rip"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:background="#00FF00"
+                android:text="Recupero"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="10sp"
+                android:gravity="center_horizontal"
+                android:background="#00FFF0"
+                android:text="PETTO"
+                />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="Push-ups"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="6 + 12"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="1 min"
+                />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="Push-ups"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="6 + 12"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="1 min"
+                />
+        </TableRow>
+
+    </TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/scheda1">
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="10sp"
+                android:gravity="center_horizontal"
+                android:background="#00FFF0"
+                android:text="SCHEDA 2"
+                />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="#00FF00"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Esercizio"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:background="#00FF00"
+                android:text="Set + Rip"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:background="#00FF00"
+                android:text="Recupero"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="10sp"
+                android:gravity="center_horizontal"
+                android:background="#00FFF0"
+                android:text="PETTO"
+                />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="Push-ups"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="6 + 12"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="1 min"
+                />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="Push-ups"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="6 + 12"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_weight="4"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:text="1 min"
+                />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

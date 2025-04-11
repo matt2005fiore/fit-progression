@@ -28,22 +28,22 @@ public class MainPageActivity extends AppCompatActivity {
                 startActivity(new Intent(MainPageActivity.this, SettingsActivity.class));
             }
         });
-        calendarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, CalendarActivity.class));
-            }
-        });
+        //calendarButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+        //public void onClick(View v) {
+          //      startActivity(new Intent(MainPageActivity.this, CalendarActivity.class));
+            //}
+        //});
         schedaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, ExercisesListActivity.class));
+                startActivity(new Intent(MainPageActivity.this, PlaceholderExercises.class));
             }
         });
         exerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPageActivity.this, PlaceholderExercises.class));
+                startActivity(new Intent(MainPageActivity.this, ExercisesListActivity.class));
             }
         });
         profileButton.setOnClickListener(new View.OnClickListener() {

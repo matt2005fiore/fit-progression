@@ -1,60 +1,71 @@
-<!-- res/layout/activity_main.xml -->
+<!-- res/layout/activity_exercise.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Enter ImageButton ID"
-        />
+        android:hint="Enter ImageButton ID" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:layout_below="@id/autoCompleteTextView" />
-
+        android:layout_below="@id/autoCompleteTextView"
+        android:layout_marginTop="24dp"
+        android:text="Search" />
 
     <Button
         android:id="@+id/ReturnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home"
         android:layout_below="@id/autoCompleteTextView"
-        android:layout_marginLeft="100dp"/>
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="27dp"
+        android:text="Home" />
+
     <Button
         android:id="@+id/SchedaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scheda"
         android:layout_below="@id/autoCompleteTextView"
-        android:layout_marginLeft="200dp"/>
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="23dp"
+        android:text="Scheda" />
+
+    <Spinner
+        android:id="@+id/Workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchButton"
+        android:layout_marginTop="40dp"
+        android:entries="@array/workout_types" />
 
     <ImageButton
         android:id="@+id/Piegamento"
-        android:onClick="Piegamento"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/p"
-        android:scaleType="fitXY"
         android:layout_marginTop="200dp"
         android:contentDescription="Piegamento"
-        />
+        android:onClick="Piegamento"
+        android:scaleType="fitXY"
+        android:src="@drawable/p" />
 
     <ImageButton
-        android:id="@+id/ChestPress"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/ChestPress"
-        android:scaleType="fitXY"
-        android:contentDescription="ChestPress"
-
+        android:id="@+id/BicepCurl"
+        android:layout_width="373dp"
+        android:layout_height="160dp"
         android:layout_below="@id/Piegamento"
-        />
+        android:layout_marginTop="140dp"
+        android:contentDescription="BicepCurl"
+        android:onClick="Curl"
+        android:scaleType="fitXY"
+
+        android:src="@drawable/b" />
 
 </RelativeLayout>

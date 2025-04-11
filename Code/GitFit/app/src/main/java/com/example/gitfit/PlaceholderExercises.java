@@ -9,6 +9,6 @@ public class PlaceholderExercises extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercises);
+        setContentView(R.layout.activity_exercises_list);
     }
 }
