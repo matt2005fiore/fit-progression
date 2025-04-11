@@ -1,6 +1,8 @@
 package com.example.gitfit;
 
-//import android.app.Activity;
+import java.time.LocalDate;
+import java.time.YearMonth;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,26 +11,85 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
-
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.time.YearMonth;
+import java.util.Locale;
 
-public class CalendarActivity extends Activity {
+public class CalendarActivity extends Activity implements CalendarAdapter.OnItemListener{
 
-@Override
-   protected void onCreate(Bundle savedInstanceState) {
+    private TextView meseAnnoText;
+    private RecyclerView calendarRecyclerView;
+    private LocalDate selectedDate;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+        initWidgets();
+        selectedDate = LocalDate.now();
+        setMonthView();
+    }
 
-        // Initialize CalendarView
-        CalendarView calendarView = findViewById(R.id.calendarView);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                // Azione esempio: mostrami un toast con la data selezionata
-                String date = dayOfMonth + "/" + (month + 1) + "/" + year;
-                Toast.makeText(CalendarActivity.this, "Selected date: " + date, Toast.LENGTH_SHORT).show();
+    private void initWidgets() {
+        calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
+        meseAnnoText = findViewById(R.id.meseAnno);
+    }
+
+    private void setMonthView() {
+        meseAnnoText.setText(meseAnnoFromDate(selectedDate));
+        ArrayList<String> giorniInUnMese = giorniInUnMeseArray(selectedDate);
+
+        CalendarAdapter calendarAdapter = new CalendarAdapter(giorniInUnMese, this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+        calendarRecyclerView.setLayoutManager(layoutManager);
+        calendarRecyclerView.setAdapter(calendarAdapter);
+    }
+
+    private ArrayList<String> giorniInUnMeseArray(LocalDate date) {
+        ArrayList<String> giorniInUnMeseArray = new ArrayList<>();
+        YearMonth annoMese = YearMonth.from(date);
+        int giorniInUnMese = annoMese.lengthOfMonth();
+
+        LocalDate primoDelMese = date.withDayOfMonth(1);
+        int giornoDellaSettimana = primoDelMese.getDayOfWeek().getValue();
+
+        for(int i = 1; i <= 42; i++) {
+            if(i<= giornoDellaSettimana || i > giorniInUnMese + giornoDellaSettimana) {
+                giorniInUnMeseArray.add("");
             }
-        });
+            else {
+                giorniInUnMeseArray.add(String.valueOf(i - giornoDellaSettimana));
+            }
+        }
+        return giorniInUnMeseArray;
+    }
+
+    private String meseAnnoFromDate(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+        return date.format(formatter);
+    }
+
+    public void mesePrecedente(View view) {
+        selectedDate = selectedDate.minusMonths(1);
+        setMonthView();
+    }
+
+    public void meseSuccessivo(View view) {
+        selectedDate = selectedDate.plusMonths(1);
+        setMonthView();
+    }
+
+    @Override
+    public void onItemClick(int position, String dayText) {
+        if(!dayText.equals("")) { // Controlla che il giorno non sia vuoto
+            String message = dayText + " " + meseAnnoFromDate(selectedDate);
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        }
     }
     
         public void onAddExerciseClick(View view) {
@@ -51,4 +112,6 @@ public class CalendarActivity extends Activity {
 
         startActivity(intent);
     }
+
 }
+    
